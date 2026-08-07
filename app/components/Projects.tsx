@@ -1,4 +1,5 @@
 "use client";
+export {};
 
 import { motion } from "framer-motion";
 import {
@@ -27,7 +28,7 @@ import {
   SiRemix,
 } from "react-icons/si";
 
-const techIcons: Record<string, JSX.Element> = {
+const techIcons: Record<string, React.ReactNode> = {
   "Node.js": <FaNodeJs className="text-green-500" />,
   TypeScript: <SiTypescript className="text-blue-500" />,
   Express: <SiExpress className="text-white" />,
@@ -85,7 +86,16 @@ const featuredProjects = [
 
 ];
 
-const otherProjects = [
+const   otherProjects: {
+  title: string;
+  description: string;
+  tech: string[];
+  badge?: string;  // <- Add '?' to make it optional
+  links?: {
+    github?: string;
+    live?: string;
+  };
+}[] =  [
 
   {
     title: "Syncezy",
