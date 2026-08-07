@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
+/* ============================================
+   LIGHT MODE (Default)
+   ============================================ */
+:root {
+  --color-background: #f8fafc;
+  --color-foreground: #0a0a0a;
+  --color-muted: #666666;
+  --color-accent: #b8a99a;
+  --color-border: #e5e0db;
+  --color-glow-start: #e8e0d8;
+  --color-glow-end: #f8fafc;
+  --color-noise: 0.02;
+  --color-card-hover: #f1f1f1;
+  --color-shadow: rgba(0, 0, 0, 0.05);
+  --color-orb-1: rgba(184, 169, 154, 0.2);
+  --color-orb-2: rgba(212, 163, 115, 0.15);
+  --color-orb-3: rgba(184, 169, 154, 0.1);
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+[data-theme="dark"] {
+  --color-background: #0a0a0a;
+  --color-foreground: #fafafa;
+  --color-muted: #999999;
+  --color-accent: #b8a99a;
+  --color-border: #2a2a2a;
+  --color-glow-start: #1a1a2e;
+  --color-glow-end: #0a0a0a;
+  --color-noise: 0.03;
+  --color-card-hover: #121212;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-orb-1: rgba(184, 169, 154, 0.15);
+  --color-orb-2: rgba(212, 163, 115, 0.08);
+  --color-orb-3: rgba(184, 169, 154, 0.05);
+}
+
+/* ============================================
+   SYSTEM PREFERENCE DETECTION
+   (Only if user hasn't manually set a theme)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --color-background: #0a0a0a;
+    --color-foreground: #fafafa;
+    --color-muted: #999999;
+    --color-accent: #b8a99a;
+    --color-border: #2a2a2a;
+    --color-glow-start: #1a1a2e;
+    --color-glow-end: #0a0a0a;
+    --color-noise: 0.03;
+    --color-card-hover: #121212;
+    --color-shadow: rgba(0, 0, 0, 0.3);
+    --color-orb-1: rgba(184, 169, 154, 0.15);
+    --color-orb-2: rgba(212, 163, 115, 0.08);
+    --color-orb-3: rgba(184, 169, 154, 0.05);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    position: relative;
+    transition: background 0.4s ease, color 0.3s ease;
+  }
+
+  /* ============================================
+     SUBTLE NOISE TEXTURE
+     ============================================ */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 1;
+    opacity: var(--color-noise);
+    transition: opacity 0.4s ease;
+  }
+
+  /* ============================================
+     GRADIENT GLOW
+     ============================================ */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at 50% 0%,
+      var(--color-glow-start) 0%,
+      var(--color-glow-end) 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+    transition: background 0.4s ease;
+  }
+
+  /* ============================================
+     BACKGROUND ORBS
+     ============================================ */
+  .bg-orbs {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .bg-orbs .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    animation: floatOrb 20s ease-in-out infinite alternate;
+    transition: background 0.4s ease, opacity 0.4s ease;
+  }
+
+  .bg-orbs .orb-1 {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    right: -100px;
+    background: radial-gradient(circle, var(--color-orb-1), transparent 70%);
+    animation-delay: 0s;
+  }
+
+  .bg-orbs .orb-2 {
+    width: 400px;
+    height: 400px;
+    bottom: 100px;
+    left: -100px;
+    background: radial-gradient(circle, var(--color-orb-2), transparent 70%);
+    animation-delay: -5s;
+    opacity: 0.08;
+  }
+
+  .bg-orbs .orb-3 {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, var(--color-orb-3), transparent 70%);
+    animation-delay: -10s;
+    opacity: 0.05;
+  }
+
+  @keyframes floatOrb {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -20px) scale(1.1); }
+    66% { transform: translate(-20px, 30px) scale(0.9); }
+    100% { transform: translate(10px, -10px) scale(1.05); }
+  }
+
+  /* ============================================
+     CONTENT Z-INDEX (above background)
+     ============================================ */
+  header,
+  main,
+  footer {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-mono);
+    letter-spacing: -0.025em;
+  }
+
+  p {
+    color: var(--color-muted);
+    line-height: 1.75;
+    max-width: 42rem;
+  }
+
+  a {
+    color: var(--color-foreground);
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--color-accent);
+  }
+}
+
+@layer utilities {
+  .border-subtle {
+    border-color: var(--color-border);
+  }
+
+  .bg-card {
+    background: var(--color-background);
+  }
+
+  .bg-card-hover {
+    background: var(--color-card-hover);
+  }
+}
