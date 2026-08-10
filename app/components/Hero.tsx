@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 export default function Hero() {
   const [text, setText] = useState("");
@@ -58,8 +58,8 @@ export default function Hero() {
         <br />
         <span className="animate-pulse text-[#3bd71c]">//</span>
         <span className="text-[#3bd71c] font-mono text-sm">
-     Available for full-time roles. Open to remote or in-office.
-  </span>
+          Available for full-time roles. Open to remote or in-office.
+        </span>
       </motion.p>
 
       <motion.div
@@ -90,6 +90,14 @@ export default function Hero() {
         >
           <FaEnvelope /> Email
         </a>
+        <a
+          href="https://wa.me/919756474998?text=Hi%2C%20I%20came%20across%20your%20portfolio%20and%20I'm%20interested%20in%20working%20with%20you.%20Could%20we%20discuss%20a%20potential%20opportunity%3F"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 py-3 border border-[#b8a99a]/30 rounded-md hover:bg-[#b8a99a] hover:text-[#0a0a0a] transition-all duration-200 text-sm text-[#fafafa] flex items-center gap-2"
+        >
+          <FaWhatsapp /> WhatsApp
+        </a>
       </motion.div>
 
       {/* Stats */}
@@ -100,7 +108,7 @@ export default function Hero() {
         className="flex gap-8 md:gap-12 mt-12 pt-8 border-t border-[#2a2a2a]"
       >
         {[
-          { value: "2+", label: "Years Experience" },
+          { value: "3+", label: "Years Experience" },
           { value: "5", label: "Production Projects" },
           { value: "∞", label: "Always Learning" },
         ].map((stat) => (

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaArrowRight } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaArrowRight, FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -26,7 +26,7 @@ export default function Contact() {
         I'm always open to interesting conversations, collaboration, or opportunities.
         <br />
         {/* <span className="text-[#b8a99a] font-mono text-sm"> */}
-            <span className="text-[#3bd71c] font-mono text-sm">
+        <span className="text-[#3bd71c] font-mono text-sm">
           // Reach out — I usually respond within a few hours.
         </span>
       </motion.p>
@@ -84,15 +84,25 @@ export default function Contact() {
           <FaArrowRight className="text-[#2a2a2a] group-hover:text-[#b8a99a] transition-colors" />
         </a>
 
-        <div className="flex items-center justify-between p-5 rounded-xl border border-[#2a2a2a] bg-[#0a0a0a]/50">
-          <div className="flex items-center gap-4">
-            <FaPhone className="text-[#b8a99a] text-lg" />
-            <div>
-              <p className="text-sm text-[#999999]">Phone</p>
-              <p className="text-[#fafafa] text-base font-medium">+91 9756474998</p>
+        <a
+        href="https://wa.me/919756474998?text=Hi%2C%20I%20came%20across%20your%20portfolio%20and%20I'm%20interested%20in%20working%20with%20you.%20Could%20we%20discuss%20a%20potential%20opportunity%3F"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block no-underline"
+        >
+
+          <div className="flex items-center justify-between p-5 rounded-xl border border-[#2a2a2a] bg-[#0a0a0a]/50">
+            <div className="flex items-center gap-4">
+              {/* <FaPhone className="text-[#b8a99a] text-lg" /> */}
+              <FaWhatsapp className="text-[#25D366] text-lg" />
+              <div>
+                <p className="text-sm text-[#999999]">Phone</p>
+                <p className="text-[#fafafa] text-base font-medium">+91 9756474998</p>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
+
       </motion.div>
     </section>
   );

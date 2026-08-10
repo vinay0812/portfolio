@@ -16,6 +16,7 @@ export default function About() {
         About Me
       </motion.h2>
 
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,24 +25,41 @@ export default function About() {
         className="mt-6 space-y-4 text-[#d4d4d4] max-w-3xl"
       >
         <p>
-          I'm a Full Stack Developer with a passion for building things that work. 
-          Currently shipping features at Mascot Software, where I work on payment systems, 
-          real-time notifications, and scalable backend infrastructure.
+          I'm a Full Stack Developer who likes building things and figuring out
+          how they work.
         </p>
+
         <p>
-          I believe in <span className="text-[#b8a99a] font-medium">learning infinity</span> — 
-          there's always something new to discover, a problem to solve, or a system to optimize. 
-          Whether it's diving into a new framework or optimizing database queries, I approach 
-          every challenge with curiosity and persistence.
+          I started with web development and over time found myself becoming more
+          interested in what happens behind the screen — how APIs are designed,
+          how databases handle data, and how different parts of an application
+          talk to each other.
         </p>
+
         <p>
-          Outside of work, I'm either building side projects, exploring new technologies, 
-          or contributing to things that matter to me.
+          I learn best by <span className="text-[#b8a99a] font-medium">building</span>.
+          Most of what I know has come from working on projects, breaking things,
+          debugging them, and trying again. I enjoy picking up something new when
+          a project gives me a reason to.
         </p>
+
+        <p>
+          These days, I'm spending more time learning about system design,
+          backend architecture, and distributed systems while continuing to
+          build and experiment with new ideas.
+        </p>
+
+        <p>
+          Outside of coding, I'm usually riding, listening to music, or just
+          thinking about things.
+        </p>
+
         <p className="text-[#999999] text-sm font-mono">
-          // Currently exploring: System Design, Distributed Systems, Open Source
+        // Always learning. Always building.
         </p>
       </motion.div>
+      
+
 
       {/* Values */}
       <motion.div

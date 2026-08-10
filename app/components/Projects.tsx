@@ -50,17 +50,7 @@ const techIcons: Record<string, React.ReactNode> = {
 };
 
 const featuredProjects = [
-  {
-    title: "Bilbaro",
-    category: "Full Stack · Marketplace",
-    description:
-      "Event ticketing platform with Stripe marketplace payouts, QR check-in system, real-time notifications, and RBAC across Admin, Organizer, and Ambassador roles.",
-    tech: ["Laravel", "PHP", "Stripe", "MySQL"],
-    links: {
-      live: "https://dev.bilbaro.com",
-    },
-    badge: "Ongoing · 5+ features shipped",
-  },
+  
   {
     title: "URL Shortener API",
     category: "Backend · DevOps",
@@ -82,6 +72,17 @@ const featuredProjects = [
       github: "https://github.com/vinay0812/backend_api",
       live: "https://event-api-qecw.onrender.com",
     },
+  },
+  {
+    title: "Bilbaro",
+    category: "Full Stack · Marketplace",
+    description:
+      "Event ticketing platform with Stripe marketplace payouts, QR check-in system, real-time notifications, and RBAC across Admin, Organizer, and Ambassador roles.",
+    tech: ["Laravel", "PHP", "Stripe", "MySQL"],
+    links: {
+      live: "https://dev.bilbaro.com",
+    },
+    badge: "Ongoing · 5+ features shipped",
   },
 
 ];
