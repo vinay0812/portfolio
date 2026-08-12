@@ -6,28 +6,9 @@
 }
 
 /* ============================================
-   LIGHT MODE (Default)
+   DARK THEME (Default)
    ============================================ */
 :root {
-  --color-background: #f8fafc;
-  --color-foreground: #0a0a0a;
-  --color-muted: #666666;
-  --color-accent: #b8a99a;
-  --color-border: #e5e0db;
-  --color-glow-start: #e8e0d8;
-  --color-glow-end: #f8fafc;
-  --color-noise: 0.02;
-  --color-card-hover: #f1f1f1;
-  --color-shadow: rgba(0, 0, 0, 0.05);
-  --color-orb-1: rgba(184, 169, 154, 0.2);
-  --color-orb-2: rgba(212, 163, 115, 0.15);
-  --color-orb-3: rgba(184, 169, 154, 0.1);
-}
-
-/* ============================================
-   DARK MODE
-   ============================================ */
-[data-theme="dark"] {
   --color-background: #0a0a0a;
   --color-foreground: #fafafa;
   --color-muted: #999999;
@@ -43,28 +24,6 @@
   --color-orb-3: rgba(184, 169, 154, 0.05);
 }
 
-/* ============================================
-   SYSTEM PREFERENCE DETECTION
-   (Only if user hasn't manually set a theme)
-   ============================================ */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]):not([data-theme="dark"]) {
-    --color-background: #0a0a0a;
-    --color-foreground: #fafafa;
-    --color-muted: #999999;
-    --color-accent: #b8a99a;
-    --color-border: #2a2a2a;
-    --color-glow-start: #1a1a2e;
-    --color-glow-end: #0a0a0a;
-    --color-noise: 0.03;
-    --color-card-hover: #121212;
-    --color-shadow: rgba(0, 0, 0, 0.3);
-    --color-orb-1: rgba(184, 169, 154, 0.15);
-    --color-orb-2: rgba(212, 163, 115, 0.08);
-    --color-orb-3: rgba(184, 169, 154, 0.05);
-  }
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -76,7 +35,6 @@
     font-family: var(--font-sans);
     min-height: 100vh;
     position: relative;
-    transition: background 0.4s ease, color 0.3s ease;
   }
 
   /* ============================================
@@ -91,7 +49,6 @@
     pointer-events: none;
     z-index: 1;
     opacity: var(--color-noise);
-    transition: opacity 0.4s ease;
   }
 
   /* ============================================
@@ -108,7 +65,6 @@
     );
     pointer-events: none;
     z-index: 0;
-    transition: background 0.4s ease;
   }
 
   /* ============================================
@@ -128,7 +84,6 @@
     filter: blur(80px);
     opacity: 0.15;
     animation: floatOrb 20s ease-in-out infinite alternate;
-    transition: background 0.4s ease, opacity 0.4s ease;
   }
 
   .bg-orbs .orb-1 {
