@@ -31,19 +31,7 @@ const experiences = [
       "Maintained and updated production applications",
     ],
   },
-  {
-    role: "Frontend Developer Intern",
-    company: "Dream tech ",
-    period: "Jun 2023 – Dec 2023",
-    location: "Dehradun",
-    icon: FaCode,
-    description: [
-      "Built responsive web interfaces using HTML5, CSS3, JavaScript, and Tailwind CSS",
-      "Developed reusable React components and managed state with hooks",
-      "Converted Figma designs into pixel-perfect, cross-browser compatible pages",
-      "Collaborated with senior developers on 5+ client projects",
-    ],
-  },
+  
   {
     role: "Full Stack Developer Intern",
     company: "Dream tech",
@@ -56,6 +44,19 @@ const experiences = [
       "Worked with MySQL and PostgreSQL databases for data persistence",
       "Implemented authentication and authorization workflows",
       "Delivered 3 full-stack applications from planning to deployment",
+    ],
+  },
+  {
+    role: "Frontend Developer Intern",
+    company: "Dream tech ",
+    period: "Jun 2023 – Dec 2023",
+    location: "Dehradun",
+    icon: FaCode,
+    description: [
+      "Built responsive web interfaces using HTML5, CSS3, JavaScript, and Tailwind CSS",
+      "Developed reusable React components and managed state with hooks",
+      "Converted Figma designs into pixel-perfect, cross-browser compatible pages",
+      "Collaborated with senior developers on 5+ client projects",
     ],
   },
   
