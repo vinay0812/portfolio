@@ -78,7 +78,7 @@ const featuredProjects = [
     category: "Full Stack · Marketplace",
     description:
       "Event ticketing platform with Stripe marketplace payouts, QR check-in system, real-time notifications, and RBAC across Admin, Organizer, and Ambassador roles.",
-    tech: ["Laravel", "PHP", "Stripe", "MySQL"],
+    tech: ["Node.js","React.js","Laravel", "Stripe", "MySQL",],
     links: {
       live: "https://dev.bilbaro.com",
     },

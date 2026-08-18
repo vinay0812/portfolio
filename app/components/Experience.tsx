@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaBuilding, FaRocket, FaRoad, FaFlag, FaStar, FaArrowRight } from "react-icons/fa";
+import { FaBuilding, FaRocket, FaRoad, FaFlag, FaStar, FaArrowRight, FaLaptopCode, FaCode } from "react-icons/fa";
 
 const experiences = [
+  
   {
     role: "Full Stack Developer",
     company: "Mascot Software",
@@ -28,6 +29,33 @@ const experiences = [
       "Reduced bug resolution time from 3 days to 6 hours",
       "Zero-downtime deployments across 3 client projects",
       "Maintained and updated production applications",
+    ],
+  },
+  {
+    role: "Frontend Developer Intern",
+    company: "Dream tech ",
+    period: "Jun 2023 – Dec 2023",
+    location: "Dehradun",
+    icon: FaCode,
+    description: [
+      "Built responsive web interfaces using HTML5, CSS3, JavaScript, and Tailwind CSS",
+      "Developed reusable React components and managed state with hooks",
+      "Converted Figma designs into pixel-perfect, cross-browser compatible pages",
+      "Collaborated with senior developers on 5+ client projects",
+    ],
+  },
+  {
+    role: "Full Stack Developer Intern",
+    company: "Dream tech",
+    period: "Jan 2024 – Jun 2024",
+    location: "Dehradun",
+    icon: FaLaptopCode,
+    description: [
+      "Built RESTful APIs using Node.js, Express, and PHP",
+      "Integrated frontend React applications with backend services",
+      "Worked with MySQL and PostgreSQL databases for data persistence",
+      "Implemented authentication and authorization workflows",
+      "Delivered 3 full-stack applications from planning to deployment",
     ],
   },
   
@@ -72,7 +100,7 @@ export default function Experience() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
             className={`relative mb-16 md:mb-20 ${
-              index === 0 ? "md:pr-[calc(50%+3rem)] md:text-right" : "md:pl-[calc(50%+3rem)]"
+              index %2=== 0 ? "md:pr-[calc(50%+3rem)] md:text-right" : "md:pl-[calc(50%+3rem)]"
             }`}
           >
             {/* Timeline Dot */}

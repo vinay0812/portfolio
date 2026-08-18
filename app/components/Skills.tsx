@@ -30,6 +30,7 @@ import {
   SiRender,
   SiGithubactions,
   SiPostman,
+  SiRedux,
   
   SiRemix,
   SiCodeigniter,
@@ -42,6 +43,7 @@ const skillCategories = [
     skills: [
       { name: "React", icon: FaReact, color: "text-cyan-400" },
       { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+      { name: "Redux", icon: SiRedux, color: "text-red-400" },
       
       { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
       { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
